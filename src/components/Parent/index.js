@@ -12,22 +12,9 @@ class Parent extends Component {
             render:!this.state.render
         })
     }
-    componentDidMount(){
-        console.log('component did mount');
-    }
-    shouldComponentUpdate(){
-        console.log('чи потрібно мені оновлюватися?');
-        return true
-    }
-    componentDidUpdate(){
-        console.log('component did update');
-    }
-    componentWillUnmount(){
-        console.log('component wil unmount');
-    }
     render() {
         return (
-            <div onClick={this.changeColor}>
+            <div>
                 Parent
                 <button onClick={this.changeRender}>Change render</button>
                 {this.state.render? <Child />: null}

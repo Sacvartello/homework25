@@ -6,32 +6,19 @@ class Lamp extends Component {
         this.state={
             isOn: false
         }
-        this.div = <div className='off'></div>
     }
-    on=()=>{
+    changeLight = ()=>{
         this.setState({
-            isOn:true
+            isOn: !this.state.isOn
         })
-        this.div = <div className='on'></div>
     }
-    off=()=>{
-        this.setState({
-            isOn:false
-        })
-        this.div = <div className='off'></div>
-    }
-    // changeLight = ()=>{
-    //     this.setState({
-    //         light: this.state.light === 'off'?'on':'off'
-    //     })
-    // }
     render=() =>{
-        const callback = this.state.isOn? this.off:this.on
         const text = this.state.isOn?'Off':'On'
+        const styles = this.state.isOn?'on':'off'
         return (
             <section>
-                {this.div}
-                <button onClick={callback}>{text}</button>
+                <div className={styles}></div>
+                <button onClick={this.changeLight}>{text}</button>
             </section>
         );
     }
