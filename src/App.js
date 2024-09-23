@@ -1,9 +1,9 @@
 import Lamp from './components/Lamp';
-
+import Greeting from './components/Greeting';
 function App() {
   return (
     <div className="App">
-      <Lamp/>
+      <Greeting usName='Nick'/>
     </div>
   );
 }
